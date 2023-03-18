@@ -1,6 +1,13 @@
 // a function that starts the game 
 
+function startGame () {
+
+}
 //a function that creates the playfield
+
+function createPlayField () {
+    
+}
 
 //a function that checks winning order
 
