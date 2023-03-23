@@ -9,12 +9,36 @@ body {
   #heading {
     font-size: large;
     position: fixed;
+    z-index: 3;
     height: fit-content;
     width: fit-content;
   }
-
   
-
+  #playerTurnDisplay {
+    height: 50px;
+    width: 100px;
+    margin-top: 133px;
+    border: 10px solid sandybrown;
+    background-color: gray;
+    position: fixed;
+    z-index: 2;
+    text-align: center;
+  }
+  
+  #playerOneScore {
+    position: fixed;
+    z-index: 2;
+    margin-right: 50%;
+    top: 20%;
+    border: 2px dotted turquoise;
+  }
+  
+  #playerTwoScore {
+    position: fixed;
+    z-index: 2;
+    margin-left: 50%;
+    top: 20%;
+  }
   
   /* Game grid */
   #grid-container {
@@ -23,6 +47,7 @@ body {
     align-items: center;
     background-color: #ffae00;
     border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
     padding: 20px;
     height: 100vh;
     width: 100%;
@@ -57,8 +82,46 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   }
   
- 
+  .box:hover {
+    box-shadow: 1px 0px 10px rgba(72, 220, 9, 0.954);
+    cursor: pointer;
+  }
   
+  .circle {
+    height: 80%;
+    width: 80%;
+    border-radius: 50%;
+    border: 10px solid rgb(55, 0, 255);
+    box-sizing: border-box;
+  }
   
+  .cross {
+    height: 80%;
+    width: 80%;
+    position: relative;
+    transform: rotate(45deg);
+  }
+  
+  .cross:before,
+  .cross:after {
+    content: "";
+    position: absolute;
+    background-color: red;
+  }
+  
+  .cross:before {
+    left: 50%;
+    width: 30%;
+    margin-left: -15%;
+    height: 100%;
+  }
+  
+  .cross:after {
+    top: 50%;
+    height: 30%;
+    margin-top: -15%;
+    width: 100%;
+  }
