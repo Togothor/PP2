@@ -97,7 +97,7 @@ This is how i imagined the game and functions to look like before take-off.
   (addMark & most parts 'not all!' of checkScore) also making the cross and circle in css, is inspired from this video https://www.youtube.com/watch?v=DRaWr0Dcbl0 code written by [Ania Kubów](https://www.youtube.com/@AniaKubow) 
 
 ## Deployment
-Live link to 
+Live link [Tic Tac toe Game](https://togothor.github.io/Tic-Tac-Toe/)
 
 # *Developer-Story*
  
