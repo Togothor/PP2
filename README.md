@@ -1,108 +1,151 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Tic Tac Toe for students.
 
-Welcome USER_NAME,
+A product that could help others that has come to a stand stil in their development. Or just want to learn.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+ As Javascript can be extremely confusing for a beginner, even after completeing course material, and doing challanges. 
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+The user will find the real value of this project located mainly inside the Javascript code file itself.
+And the "by-product" is a working straight forward Tic Tac Toe game.
 
-## Gitpod Reminders
+## Introduction.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+[![Tic-tac-toe-show.jpg](https://i.postimg.cc/3WMNwkJL/Tic-tac-toe-show.jpg)](https://postimg.cc/RJR4sVtf)
+This is how the game looks when it is in full action.
 
-`python3 -m http.server`
+One of the simplest games, 3x3 squares, called tic tac toe, or Noughts and crosses as some people say. 
 
-A blue button should appear to click: _Make Public_,
+There's somewhere between 26830 and 31896 possible games. Depending on some rules that i will not go into. 
 
-Another blue button should appear to click: _Open Browser_.
+The main goal for a player is to get 3 of the same objects in line or diagonal. 
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+The game begins with a players turn screen, that shows (always it's circles turn to start) when the game is first loaded. 
+Will then show players turn, after a box is clicked. 
+It will show a message who wins the turn, also if it's a draw. 
 
-A blue button should appear to click: _Make Public_,
+The game-grid is responsive, with the help of css. And can be played on smaller screens. 
 
-Another blue button should appear to click: _Open Browser_.
+That's everything about the game itself. 
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+Now lets look at the code and it's functions. 
 
-To log into the Heroku toolbelt CLI:
+## Functions
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+The game is made up by 3 different functions. 
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+ - createBoard   (creates 3 columns with 3 divs inside each, appended to a "game-container")
+ - addMark        (listens for click events, and creates the player markers, loaded from css)
+ - checkScore    (checks arrays of winning combinations, updates playerdisplay, and resets "game-container") 
+(***Actually*** checkScore is made up of 6 "sub-functions")
 
-------
+## Some overview inside script.js
 
-## Release History
+At the top the user will find the welcome screen and the happy mascot, where a short introduction is presented.
+Moving down, the user will find info about the game, and how the functions are built. 
+[![Student-welcome.jpg](https://i.postimg.cc/mkc6Vqwz/Student-welcome.jpg)](https://postimg.cc/fSNKR81D)
+Happy coding = efficient work. This is the mascot named mascot who lives inside the code and looks out so that no coder gets lost.
+[![happy-mascot.jpg](https://i.postimg.cc/76KGVPP9/happy-mascot.jpg)](https://postimg.cc/jwJSqb7n)
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+This is how the info box for the function addMark looks. All functions is presented in a similar way.
+[![Function-info-add-Mark.jpg](https://i.postimg.cc/K80bqKSd/Function-info-add-Mark.jpg)](https://postimg.cc/9DwszQfp)
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+## Testing
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+Tested the code in jshint, some code needs at least esversion: 11' to work. 
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+Css got a score of ## CSS lvl 3 + SVG
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+Validating Html, only points out that section should contain a header, but i will leave it as is. The id makes its point.
+#
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+Iphone 5 size screens works well. 
+Larger screens up to 4k works as well but the player turn display and heading becomes tiny. 
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+----
+| Test label |Test action  |Expected outcome|Test Outcome|
+|--|--|--|--|
+| Game functionality |Test different combiantion  |Game reset when either win or draw |Pass|
+|Player turn |Play end games |PlayerTurnDisplay matches winner|Pass|
+|playerTurnDisplay|Play end game / game reset (not refresh screen)|When game reset playerTurnDisplay shows Starting player |Fail / Starting player does not update after a played game 
 
 ---
 
-Happy coding!
+## Unfixed bugs
+
+The failed test, might be resolved by rewriting the function that resets the board after every game. 
+This has not been looked into due to shortage of time.
+#
+
+## Possible Future functions & updates
+
+ - Player score function
+ - High score table
+ - Reset game button
+ - Functionality to choose 3x3, 4x4, 5x5 size board
+ - Choose player icon or picture
+ - Make game look more stylish with a cooler look.
+ - Fix, so that starting player is shown after a game is played.
+ -  a function that shows the winning move until player start a new game.
+ - add the possability to play against ai. with different difficulty levels.
+ - a div that can show actual code that is in use.
+# Wireframe
+
+This is how i imagined the game and functions to look like before take-off.
+[![tic-tac-toe-wireframe.jpg](https://i.postimg.cc/bNk7vxWg/tic-tac-toe-wireframe.jpg)](https://postimg.cc/kBM11bnR)
+
+## Credits
+
+  (addMark & most parts 'not all!' of checkScore) also making the cross and circle in css, is inspired from this video https://www.youtube.com/watch?v=DRaWr0Dcbl0 code written by [Ania Kubów](https://www.youtube.com/@AniaKubow) 
+
+## Deployment
+Live link to 
+
+# *Developer-Story*
+ 
+ This project turned out to become a self educating experience, as i gradually became aware of my shortcommings as a beginner, i also started to realise my own kind of learning ability. *finally*
+ 
+Traveling down the path of Javascript, reading all the content, "learning" a new language.
+Watching videos, doing challanges and so on.
+
+It kind of never actually started to click. I felt more and more 'behind'. 
+That by itself became a downward spiral. *worst that can happen when learning*. 
+Loosing interest, and struggle.
+
+"how can i make my learning fun?"
+ 
+Working several years on the cutting edge, in the world of advance CNC machining. 
+Up to 9 axis of machining.
+Where another type of code 'Robot language > Gcode' is like fluent water for me. 
+("Gcode also has many different functions, but the lines of code need to be put in order exactly right or it will fail. And you can run sub-programs within programs, and link between them and jump arround, some similarities to javascript") 
+
+Javascript is on another level of confusion. As there are so many ways to do the same thing. 
+
+That experience alone i thought would make it easy for me to understand this. Not so much i realised.
+As the code in Javascript can be very encrypted, "*anonomus*" from my point of view. With code that goes in reverse order right to left, and then goes back to be read in left to right. 
+
+The difference is what my old teacher told me, 
+
+"You cannot simply learn how to ride a horse theoretically! You must ride it in real life." 
+
+After weeks of studying Javascript i found myself standing against a wall of stupidity. Everything i tried just did not work.
+I Felt like a baby. 
+
+How can i walk myself out of this hole i asked myself, what is it that is so hard for me to grasp ?  
+
+I felt ambarresed not to be able to build code from scratch after weeks of studying, any custom code felt light years away. 
+But after i finally understood what my brain need to comprehend this understanding, a whole new world opened up for me.
+And this experience makes me feel much richer. 
+
+This understanding finally made me humble enough to dive in to other peoples work ("embarrassing") and even copy their code to some extent, just to realise what was going on. 
+
+I was so afraid of looking at others code, that i made myself come to a stand stil. 
+
+For me that would just take to much time of trial and error my way forward. In reflection i've should have asked for much more help.
+
+Instead this product came to life from that experience.
+A product that will grow with time, develop more functions. 
+
+And hopefully the mascot will catch some people who has lost their way to find inspiration again.  
+
+So this product takes the journey through my experience of learning the code, the comments i had to make to understand whats inside, and the explanation of the functions in a real world scenario.
+
+I even left some commented "*i know*" code, that the user can try, to see for them selves what happens within the console. 
